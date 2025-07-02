@@ -1,3 +1,74 @@
+# General Admin
+
+**Category:** General Administration
+## Connecting to an Open Network
+
+```bash
+nmcli dev wifi connect "FreeWifi"
+
+OR
+
+sudo ip link set wlan0 up
+sudo iw dev wlan0 scan | grep SSID         # Optional: Scan for network
+sudo iw dev wlan0 connect "FreeWifi"
+sudo dhclient wlan0
+
+```
+
+## Connecting to a WEP Network
+
+```bash
+nmcli dev wifi connect "<SSID>" password "<WEP_KEY>"
+
+OR
+
+sudo ip link set wlan0 up
+sudo iwconfig wlan0 essid "<SSID>" key s:<WEP_KEY>
+sudo dhclient wlan0
+```
+
+## Connecting to a WPA/WPA2-Personal Network
+
+```bash
+nmcli dev wifi connect "<SSID>" password "<PASSWORD>"
+
+OR
+wpa_passphrase "<SSID>" "<PASSWORD>" | sudo tee /etc/wpa_supplicant.conf
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+sudo dhclient wlan0
+
+```
+
+## Connecting to a WPA/WPA2-Enterprise (WPA-MGMT) Network
+For EAP-PEAP/MSCHAPv2, common in corp environments (e.g., Eduroam):
+
+```bash
+sudo nano /etc/wpa_supplicant_enterprise.conf                #create a wpa_supplicant config
+
+network={
+    ssid="CorpNet"
+    scan_ssid=1
+    key_mgmt=WPA-EAP
+    eap=PEAP
+    identity="your_username"
+    password="your_password"
+    phase1="peaplabel=0"
+    phase2="auth=MSCHAPV2"
+}
+
+#Conect
+sudo ip link set wlan0 up
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant_enterprise.conf
+sudo dhclient wlan0
+
+#Check Connection
+iw wlan0 link           # Show current connection
+ip a show wlan0         # Show IP info
+ping -c 3 1.1.1.1       # Test internet
+
+```
+
+
 # Encryption Flaws
 
 **Category:** ENCRYPTION FLAWS
