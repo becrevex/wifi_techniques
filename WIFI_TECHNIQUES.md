@@ -68,6 +68,34 @@ ping -c 3 1.1.1.1       # Test internet
 
 ```
 
+## Barebones Mode Toggling
+
+Mode	                  Description
+managed	                  Default mode for connecting to APs (what most clients use)
+monitor	                  Captures all wireless traffic without associating to an AP (used in sniffing, injection, etc.)
+ap	                      Turns the interface into an Access Point (used in hostapd, evil twin attacks)
+ibss	                  Ad-hoc mode, peer-to-peer networks without APs
+mesh	                  Mesh networking (802.11s), for decentralized node connections
+p2p-device	              Wi-Fi Direct (peer-to-peer device discovery)
+p2p-client / p2p-go	      Wi-Fi Direct client and group owner roles
+nan	                      Neighbor Awareness Networking (used in IoT/local discovery)
+ocb	                      Outside the Context of a BSS (used for vehicular networks, 802.11p)
+
+```bash
+# Place wlan1 in managed mode
+sudo ip link set wlan1 down
+sudo iw wlan1 set type managed
+sudo ip link set wlan1 up
+iw dev wlan1 info                     #confirm
+
+
+sudo ip link set wlan1 down
+sudo iw wlan1 set type monitor
+sudo ip link set wlan1 up
+iw dev wlan1 info                    #confirm
+
+```
+
 
 # Encryption Flaws
 
