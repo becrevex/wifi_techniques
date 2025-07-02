@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="OSWP_TECHNIQUES.md"
+FILE="WIFI_TECHNIQUES.md"
 
 declare -A techniques
 declare -A categories
