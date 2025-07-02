@@ -56,7 +56,7 @@ network={
     phase2="auth=MSCHAPV2"
 }
 
-#Conect
+#Connect
 sudo ip link set wlan0 up
 sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant_enterprise.conf
 sudo dhclient wlan0
