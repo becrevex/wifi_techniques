@@ -1,6 +1,6 @@
 # General Admin
 
-**Category:** General Administration
+**Category:** GENERAL ADMIN
 ## Connecting to an Open Network
 
 ```bash
