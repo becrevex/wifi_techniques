@@ -1,7 +1,7 @@
 # CRACKING CONCEPTS
 
-**Category:** HIGH LEVEL
-## Open (OPN) Networks
+**Category:** CRACKING CONCEPTS
+## CONCEPTUAL: Open (OPN) Networks
 No encryption. Anyone can connect and sniff traffic (unless HTTPS is used).
 
 ```bash
@@ -10,7 +10,7 @@ ARP spoofing, DNS spoofing, session hijacking (e.g., ettercap, bettercap)
 Evil twin or captive portal injection
 ```
 
-## Wired Equivalency Prototol (WEP) Networks
+## CONCEPTUAL: Wired Equivalency Prototol (WEP) Networks
 Very weak encryption, crackable in minutes.
 
 ```bash
@@ -21,7 +21,7 @@ Crack key with:
    aircrack-ng <capture file>
 ```
 
-## WPA/WPA2-Personal (PSK) Networks
+## CONCEPTUAL WPA/WPA2-Personal (PSK) Networks
 Shared password, secured via a 4-way handshake.
 Primary attack: Capture the handshake and crack it offline with a wordlist.
 
@@ -53,7 +53,7 @@ Pre-computed PMKs based on SSID and dictionary
 
 
 
-## WPA/WPA2-Enterprise (WPA-MGT / WPA-EAP) Networks
+## CONCEPTUAL: WPA/WPA2-Enterprise (WPA-MGT / WPA-EAP) Networks
 Uses 802.1X with a RADIUS server and EAP authentication
 Password not stored in a static hash like PSK — must be captured in real-time during login and cracked.
 
