@@ -439,7 +439,7 @@ because FreeRADIUS-WPE extracts the same challenge-response pairs that MS-CHAPv2
 ---
 
 
-# CRACKING CONCEPTS
+# Cracking Concepts
 
 **Category:** CRACKING CONCEPTS
 ## NETWORK TYPE: Open (OPN) Networks
