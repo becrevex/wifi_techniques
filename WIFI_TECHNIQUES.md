@@ -321,7 +321,7 @@ This setup simulates the "evil twin" attack where no real AP needs to be online 
 ---
 
 # Advanced Wlan Techniques
-
+**Category:** ADVANCED WLAN TECHNIQUES
 ### Man-in-the-Middle attack
 
 Description:
