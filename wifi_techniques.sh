@@ -46,7 +46,7 @@ load_techniques() {
 
 list_titles_by_category() {
     echo "Technique Titles Organized by Category:"
-    local declared_categories=("GENERAL ADMIN" "ENCRYPTION FLAWS" "ATTACKING THE CLIENT" "ATTACKS ON THE WLAN" "ATTACKING WPA AND FREE RADIUS" "ADVANCED WLAN TECHNIQUES")
+    local declared_categories=("GENERAL ADMIN" "ENCRYPTION FLAWS" "ATTACKING THE CLIENT" "ATTACKS ON THE WLAN" "ATTACKING WPA AND FREE RADIUS" "ADVANCED WLAN TECHNIQUES" "CRACKING CONCEPTS")
     local idx
     for cat in "${declared_categories[@]}"; do
         echo -e "\n$cat:"
